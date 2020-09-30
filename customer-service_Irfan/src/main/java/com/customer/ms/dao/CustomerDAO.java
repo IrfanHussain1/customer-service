@@ -26,8 +26,8 @@ public class CustomerDAO {
 		Customer cus3 = new Customer ("C03", "Ethan", "CA");
 
 		cusMap.put(cus1.getCusId(),  cus1);
-		cusMap.put(cus1.getCusId(),  cus2);
-		cusMap.put(cus1.getCusId(),  cus3);
+		cusMap.put(cus2.getCusId(),  cus2);
+		cusMap.put(cus3.getCusId(),  cus3);
 
 	}
 
