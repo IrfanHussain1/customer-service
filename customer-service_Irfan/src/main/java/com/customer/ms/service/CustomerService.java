@@ -8,4 +8,6 @@ public interface CustomerService {
 		List<CustomerM> findAll();
 		CustomerM findById( String cusId);
 		CustomerM addCustomer ( CustomerM customerM);
+		CustomerM updateCustomer(CustomerM customerM);
+		String deleteCustomer(String cusId);
 }

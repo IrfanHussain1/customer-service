@@ -60,7 +60,10 @@ public class CustomerController {
 			public Customer deleteCustomer(@RequestBody Customer customer) {
 				return customerDAO.deleteCustomer(customer);
 			}	
-		
+	/**
+	 * in Next section we are getting Customer from mongo DB, Above was from local 
+	 */
+			
 			@RequestMapping(value="/mongoCustomers", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
 			public List<CustomerM> getMongoCustomers(){
 				List<CustomerM> list= customerService.findAll();
@@ -76,7 +79,14 @@ public class CustomerController {
 			public CustomerM addMongoCustomer(@RequestBody CustomerM customerM){
 				return customerService.addCustomer(customerM);
 			}
+//update
+			@RequestMapping(value="/mongoCustomer", method = RequestMethod.PUT, produces = {MediaType.APPLICATION_JSON_VALUE})
+			public CustomerM updateMongoCustomer(@RequestBody CustomerM customerM){
+				return customerService.addCustomer(customerM);
+			}
+
 }
+
 
 
 

@@ -29,10 +29,32 @@ public class CustomerServiceImpl implements CustomerService {
 		}
 		return null;
 	}
+	
+	// add 
 	@Override
 	public CustomerM addCustomer(CustomerM customerM) {
 		
 		return customerRepository.save(customerM);
 	}
 	
+	//update
+	@Override
+	public CustomerM updateCustomer(CustomerM customerM) {
+		Optional<CustomerM> opt = customerRepository.findById(customerM.getCusId());		
+		if(opt.isPresent()) {
+			 return customerRepository.save(customerM);
+		}
+		return null;
+	}
+	
+	//delete 
+	@Override
+	public String deleteCustomer(String cusId) {
+		Optional<CustomerM> opt = customerRepository.findById(cusId);
+		if(opt.isPresent()) {
+			customerRepository.deleteById(cusId);
+			return "deleted";
+		}
+		return "Customer Does not exist";
+	}
 }
