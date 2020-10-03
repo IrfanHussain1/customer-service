@@ -82,7 +82,7 @@ public class CustomerController {
 //update
 			@RequestMapping(value="/mongoCustomer", method = RequestMethod.PUT, produces = {MediaType.APPLICATION_JSON_VALUE})
 			public CustomerM updateMongoCustomer(@RequestBody CustomerM customerM){
-				return customerService.addCustomer(customerM);
+				return customerService.updateCustomer(customerM);
 			}
 			//delete 
 			@RequestMapping(value="/mongoCustomer", method = RequestMethod.DELETE, produces = {MediaType.APPLICATION_JSON_VALUE})
