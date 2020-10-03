@@ -84,6 +84,11 @@ public class CustomerController {
 			public CustomerM updateMongoCustomer(@RequestBody CustomerM customerM){
 				return customerService.addCustomer(customerM);
 			}
+			//delete 
+			@RequestMapping(value="/mongoCustomer", method = RequestMethod.DELETE, produces = {MediaType.APPLICATION_JSON_VALUE})
+			public String deleteMongoCustomer(@RequestBody CustomerM customerM){
+				return customerService.deleteCustomer(customerM.getCusId());
+			}
 
 }
 
